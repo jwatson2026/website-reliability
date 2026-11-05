@@ -14,11 +14,9 @@ affects application connectivity.
 
 ## Working configuration
 
-- Two Nginx Pods with the label app=website.
-
-- A ClusterIP Service selecting app=website.
-
-- A request through the Service successfully returned the Nginx page.
+* Two Nginx Pods with the label app=website.
+* A ClusterIP Service selecting app=website.
+* A request through the Service successfully returned the Nginx page.
 
 
 
@@ -33,18 +31,13 @@ Kubernetes accepted the configuration, but no Pods matched it.
 ## Investigation
 
 1. Checked the Service's EndpointSlice and found no endpoints.
-
 2. Checked Pod status and labels.
-
 3. Confirmed both Pods were still Running with app=website.
-
 4. Compared those labels with the Service selector.
 
 
 
-The mismatch explained why the Service had no Pod addresses
-
-to send traffic to.
+\# Service selector mismatch.
 
 
 
@@ -64,11 +57,9 @@ a server dry run before applying the change.
 
 ## Recovery verification
 
-- Both Pod addresses returned to the EndpointSlice.
-
-- A temporary test Pod requested http://website.
-
-- The request returned HTTP 200.
+* Both Pod addresses returned to the EndpointSlice.
+* A temporary test Pod requested http://website.
+* The request returned HTTP 200.
 
 
 
