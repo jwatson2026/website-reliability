@@ -4,10 +4,10 @@ A Kubernetes website project focused on deployment, Service connectivity, and tr
 
 ## Environment
 
-- Docker Desktop Kubernetes on Windows
-- Nginx Deployment with two Pods
-- ClusterIP Service
-- PowerShell, kubectl, and Git
+* Docker Desktop Kubernetes on Windows
+* Nginx Deployment with two Pods
+* ClusterIP Service
+* PowerShell, kubectl, and Git
 
 This is an independent project using simulated incidents.
 
@@ -35,12 +35,21 @@ Checking Pod status, matching labels, endpoint addresses, and an actual HTTP req
 
 ## Project files
 
-- deployment.yaml: Defines the two-Pod Nginx Deployment.
-- service.yaml: Defines the internal website Service.
-- docs/service-selector-incident.md: Records the investigation and recovery.
+* deployment.yaml: Defines the two-Pod Nginx Deployment.
+* service.yaml: Defines the internal website Service.
+* docs/service-selector-incident.md: Records the investigation and recovery.
 
 ## Limitations
 
 Both Pods run on one local Kubernetes node, so they do not protect against losing that node.
 
 The project does not yet include health probes, automated monitoring, or a deployment pipeline.
+
+
+
+## Additional incident reports
+
+
+
+- [Invalid image tag: investigation and recovery](docs/invalid-image-incident.md)
+
